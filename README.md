@@ -18,7 +18,7 @@ I do **not claim ownership** of the original code — my goal is to study, annot
 
 ## 📘 Chapter Summaries
 
-### 📗 Chapter 1 – *Introduction to Keras and TensorFlow*
+### 📗 Chapter 3 – *Introduction to Keras and TensorFlow*
 
 This chapter introduces the core building blocks of TensorFlow and contrasts them with NumPy:
 
@@ -99,7 +99,7 @@ In this notebook, we explore a **multi-class single-label classification** task 
   - 🔸 Larger Network (128 units in the two hidden Dense Layer)
     - Slight boost: ~82–83% accuracy.
     
-🔍 Grid Search for Hyperparameter Tuning
+🔍 **Grid Search for Hyperparameter Tuning**
 - Automatically selects the best combination of hyperparameters.
 - **Best results with: adam, 128 units, relu, dropout 0.5.**
 - **Achieves ~83% accuracy with better generalization.**
