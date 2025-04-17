@@ -76,7 +76,33 @@ Result: The model started to stabilize and generalize better!
 
 📈 Visual analysis helps understand when the model starts to overfit and how architectural changes impact learning.
 
+#### 🔹 Part 2: Multi-class Classification – Reuters Newswire Topics
 
+In this notebook, we explore a **multi-class single-label classification** task using the Reuters dataset.
+
+- **Dataset:** [Reuters newswire topics](https://keras.io/api/datasets/reuters/)
+- Contains **11,228 newswires** classified into **46 distinct topics**.
+- Each sample belongs to **only one class** (single-label).
+
+🧾 **Data loading & preprocessing**:
+- Inputs are pre-tokenized sequences of integers.
+- Decode with `reuters.get_word_index()` for raw text reconstruction.
+- Vectorize input using multi-hot encoding
+  
+🧪 **Architecture Variants**: 
+ - 🔸 Two hidden `Dense` layers with 64 units and ReLU activation.
+  - Final output layer with 46 units and softmax activation
+  - Optimizer: `rmsprop`, Loss: `categorical_crossentropy`, metrics: `accuracy`
+    - Average accuracy ~80%.
+ - 🔸 Bottleneck (only 4 units in the two hidden Dense Layer)
+   - Drops accuracy to ~71% due to limited capacity.
+  - 🔸 Larger Network (128 units in the two hidden Dense Layer)
+    - Slight boost: ~82–83% accuracy.
+    
+🔍 Grid Search for Hyperparameter Tuning
+- Automatically selects the best combination of hyperparameters.
+- **Best results with: adam, 128 units, relu, dropout 0.5.**
+- **Achieves ~83% accuracy with better generalization.**
 ---
 
 More chapters will be added as I progress through the book 📚
